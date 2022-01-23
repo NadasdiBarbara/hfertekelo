@@ -7,5 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Beadas extends Model
 {
-    protected $fillable = ['class', 'name', 'url', 'points', 'message'];
+    use HasFactory;
+    protected $fillable = [
+        'class', 
+        'name', 
+        'url', 
+        'points', 
+        'message'
+    ];
+
+    protected $visible = [
+        'id',
+        'class',
+        'name',      
+        'url',       
+        'points',      
+        'message',
+    ];
 }

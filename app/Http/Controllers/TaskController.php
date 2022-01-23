@@ -16,7 +16,7 @@ class TaskController extends Controller
     public function index()
     {
         $beadasok = Beadas::orderBy('class')->get();
-        return view('beadasok.index', ['beadasok' =>$beadasok]);
+        return view('beadasok.index', ['beadasok' => $beadasok]);
     }
 
     /**
@@ -52,7 +52,7 @@ class TaskController extends Controller
      */
     public function show(Beadas $beadas)
     {
-        return view('beadasok.show', ['beadas'=>$beadas]);
+        return view('beadasok.show', ['beadas'=> $beadas]);
     }
 
     /**
@@ -75,7 +75,7 @@ class TaskController extends Controller
      */
     public function update(TaskRequest $request, Beadas $beadas)
     {
-        $adatok= $request->only([ 'class', 'name', 'url','points', 'message']);
+        $adatok= $request->only(['class', 'name', 'url', 'points', 'message']);
         $beadas->fill($adatok);
         $beadas->save();
         return redirect()->route('beadasok.show', $beadas->id);

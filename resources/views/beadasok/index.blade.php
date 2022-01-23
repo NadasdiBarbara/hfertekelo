@@ -33,7 +33,7 @@
                 @csrf
                 <button type="submit">Törlés</button>
             </td>
-             
+         </tr>    
         @endforeach
       
     </table>
