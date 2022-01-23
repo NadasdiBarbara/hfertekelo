@@ -75,7 +75,7 @@ class TaskController extends Controller
      */
     public function update(TaskRequest $request, Beadas $beadas)
     {
-        $adatok= $request->only(['class', 'name', 'url', 'points', 'message']);
+        $adatok= $request->only([ 'class', 'name', 'url','points', 'message']);
         $beadas->fill($adatok);
         $beadas->save();
         return redirect()->route('beadasok.show', $beadas->id);

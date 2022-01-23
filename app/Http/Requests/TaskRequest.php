@@ -26,7 +26,9 @@ class TaskRequest extends FormRequest
         return [
             'class'=>'required|min:9|max:14',
             'name'=>'required',
-            'url'=>'required|url',
+            'url'=>'required',
+            'points' => 'required|min:1|max:5',
+            'message' => 'required',
             
         ];
     }

@@ -18,20 +18,26 @@
         </tr>
         @foreach ($beadasok as $beadas)
         <tr>
-            
-            <td>{{ $beadas->class }}</td>
+            <td>
+                <a href="{{ route('beadasok.show', $beadas->id) }}">{{ $beadas->class }}</a>
+            </td>
+            <!--<td>{{ $beadas->class }}</td>-->
             <td>{{ $beadas->name }}</td>
             <td>{{ $beadas->url }}</td>
             <td>{{ $beadas->points }}</td>
             <td>{{ $beadas->message }}</td>
+            
             <td>
                 <form method="POST" action="{{ route('beadasok.destroy', $beadas->id) }}">
                 @method('DELETE')
                 @csrf
                 <button type="submit">Törlés</button>
             </td>
-        </tr>
+             
         @endforeach
+      
     </table>
+    <br>
+    <a href="{{ route('beadasok.create') }}">Make new</a>
 </body>
 </html>
