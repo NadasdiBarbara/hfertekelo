@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TaskRequest;
 use App\Models\Beadas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -62,8 +63,9 @@ class TaskController extends Controller
      * @param  \App\Models\Beadas  $beadas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Beadas $beadas)
+    public function edit($id)
     {
+        $beadas= Beadas::find($id);
         return view('beadasok.edit', ['beadas' => $beadas]);
     }
 
@@ -74,7 +76,7 @@ class TaskController extends Controller
      * @param  \App\Models\Beadas  $beadas
      * @return \Illuminate\Http\Response
      */
-    public function update(TaskRequest $request, Beadas $beadas)
+    public function update(Request $request, Beadas $beadas)
     {
         $adatok= $request->only(['class', 'name', 'url', 'points', 'message']);
         $beadas->fill($adatok);

@@ -13,6 +13,8 @@
     <p>Points: {{ $beadas->points }} </p>
     <p>Message: {{ $beadas->message }} </p>
 
+
+    <a href="{{ route('beadasok.edit', $beadas->id) }}">Edit</a>
     <a href="{{ route('beadasok.index') }}">Back</a>
 </body>
 </html>

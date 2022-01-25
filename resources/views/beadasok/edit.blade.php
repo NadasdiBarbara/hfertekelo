@@ -11,6 +11,18 @@
     <form method='POST' action="{{ route('beadasok.update', $beadas->id) }}">
          @method('PATCH')
          @csrf
+         <div>
+                Class:<br>
+                <input type="number" name="class" value="{{ $beadas->class }}"disabled>
+            </div>
+            <div>
+                Name:<br>
+                <input type="text" name="name" value="{{ $beadas->name }}"disabled>
+            </div>
+            <div>
+                URL:<br>
+                <input type="text" name="url" value="{{ $beadas->url }}"disabled>
+            </div>
             <div>
                 Points:<br>
                 <input type="number" name="points" value="{{ $beadas->points }}">
