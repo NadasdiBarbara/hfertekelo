@@ -30,8 +30,9 @@
             <td>
                 <form method="POST" action="{{ route('beadasok.destroy', $beadas->id) }}">
                 @method('DELETE')
-                @csrf
+                @csrf    
                 <button type="submit">Törlés</button>
+                </form>
             </td>
          </tr>    
         @endforeach

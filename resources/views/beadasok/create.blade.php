@@ -14,7 +14,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
             Class<br>
-            <input type="number" name="class" value="{{ old('class') }}">
+            <input type="number" name="class">
             <!--
             @error('class')
                 <p>{{ $message }}</p>
@@ -23,7 +23,7 @@
         </div>
         <div>
             Name<br>
-            <input type="text" name="name" value="{{ old('name') }}">
+            <input type="text" name="name">
             <!--
             @error('class')
                 <p>{{ $message }}</p>
@@ -32,7 +32,7 @@
         </div>
         <div>
             URL<br>
-            <input type="text" name="url" value="{{ old('url') }}">
+            <input type="text" name="url">
             <!--
             @error('class')
                 <p>{{ $message }}</p>
@@ -41,7 +41,7 @@
         </div>
          <div>
             Points<br>
-            <input type="number" name="points" value="{{ old('points') }}">
+            <input type="number" name="points">
             <!--
             @error('class')
                 <p>{{ $message }}</p>
@@ -50,7 +50,7 @@
         </div>
          <div>
             Message<br>
-            <input type="text" name="message" value="{{ old('message') }}">
+            <input type="text" name="message" >
              <!--
             @error('class')
                 <p>{{ $message }}</p>

@@ -35,7 +35,7 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TaskRequest $request)
+    public function store(Request $request)
     {
         $adatok = $request->only(['class', 'name', 'url', 'points', 'message']);
         $beadas = new Beadas();
@@ -50,8 +50,9 @@ class TaskController extends Controller
      * @param  \App\Models\Beadas  $beadas
      * @return \Illuminate\Http\Response
      */
-    public function show(Beadas $beadas)
+    public function show($id)
     {
+        $beadas = Beadas::find($id);
         return view('beadasok.show', ['beadas'=> $beadas]);
     }
 
@@ -87,9 +88,9 @@ class TaskController extends Controller
      * @param  \App\Models\Beadas  $beadas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Beadas $beadas)
+    public function destroy($id)
     {
-        $beadas->delete();
+        Beadas::where('id', $id)->delete();
         return redirect()->route('beadasok.index');
     }
 }
