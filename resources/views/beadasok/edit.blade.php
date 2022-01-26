@@ -26,10 +26,16 @@
             <div>
                 Points:<br>
                 <input type="number" name="points" value="{{ $beadas->points }}">
+                @error('points')
+                <p>{{ $message }}</p>
+                @enderror
             </div>
             <div>
                 Message:<br>
                 <input type="text" name="message" value="{{ $beadas->message }}">
+                @error('message')
+                <p>{{ $message }}</p>
+                @enderror
             </div>
                     
             <div>

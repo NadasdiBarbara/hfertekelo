@@ -36,7 +36,7 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
         $adatok = $request->only(['class', 'name', 'url', 'points', 'message']);
         $beadas = new Beadas();
@@ -76,8 +76,9 @@ class TaskController extends Controller
      * @param  \App\Models\Beadas  $beadas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Beadas $beadas)
+    public function update(Request $request, int $id)
     {
+        $beadas= Beadas::find($id);
         $adatok= $request->only(['class', 'name', 'url', 'points', 'message']);
         $beadas->fill($adatok);
         $beadas->save();

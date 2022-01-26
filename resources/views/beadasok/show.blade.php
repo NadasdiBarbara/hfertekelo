@@ -14,7 +14,24 @@
     <p>Message: {{ $beadas->message }} </p>
 
 
-    <a href="{{ route('beadasok.edit', $beadas->id) }}">Edit</a>
-    <a href="{{ route('beadasok.index') }}">Back</a>
+    
+
+
+<form action="{{ route('beadasok.edit', $beadas->id) }}">
+
+        <br>
+
+        <button type="submit">Edit</button>
+
+    </form>
+    
+
+    <form action="{{ route('beadasok.index') }}">
+
+        <br>
+
+        <button type="submit">Back</button>
+
+    </form>
 </body>
 </html>

@@ -39,6 +39,15 @@
       
     </table>
     <br>
-    <a href="{{ route('beadasok.create') }}">Make new</a>
+
+    <form action="{{ route('beadasok.create') }}">
+
+        <br>
+
+        <button type="submit">Make New</button>
+
+    </form>
+
 </body>
 </html>
+

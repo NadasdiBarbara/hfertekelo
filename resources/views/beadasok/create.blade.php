@@ -7,59 +7,49 @@
     <title>New</title>
 </head>
 <body>
-    <h1>New statue</h1>
-
 
     <form method='POST' action="{{ route('beadasok.store') }}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
             Class<br>
             <input type="number" name="class">
-            <!--
+            
             @error('class')
                 <p>{{ $message }}</p>
             @enderror
-            -->
+            
         </div>
         <div>
             Name<br>
             <input type="text" name="name">
-            <!--
-            @error('class')
+            
+            @error('name')
                 <p>{{ $message }}</p>
             @enderror
-            -->
+            
         </div>
         <div>
             URL<br>
             <input type="text" name="url">
-            <!--
-            @error('class')
+            
+            @error('url')
                 <p>{{ $message }}</p>
             @enderror
-            -->
+            
         </div>
-         <div>
-            Points<br>
-            <input type="number" name="points">
-            <!--
-            @error('class')
-                <p>{{ $message }}</p>
-            @enderror
-            -->
+         <div> 
+            <input type="hidden" name="points" value="1">
         </div>
-         <div>
-            Message<br>
-            <input type="text" name="message" >
-             <!--
-            @error('class')
-                <p>{{ $message }}</p>
-            @enderror
-            -->
+         <div>     
+            <input type="hidden" name="message" value="Nincs"  >
         </div>
         <div>
             <input type="submit" value="Create">
         </div>
+    </form>
+    <form action="{{ route('beadasok.index') }}">
+        <br>
+        <button type="submit">Back</button>
     </form>
 </body>
 </html>
